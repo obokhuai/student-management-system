@@ -5,8 +5,6 @@ import { userActions } from './userReducer';
 
 
 
-
-// 
 function Update() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -14,8 +12,6 @@ function Update() {
   const users = useSelector((state) => state.users);
   const existingUser = users.filter(user => user.id == id);
 
-  // Add a conditional check to prevent errors when existingUser is empty
-  // const { name, email } = existingUser.length ? existingUser[0] : { name: '', email: '' };
   const { name, email } = existingUser[0]
   const [updatename, setUpdateName] = useState(name);
   const [updateemail, setUpdateEmail] = useState(email);

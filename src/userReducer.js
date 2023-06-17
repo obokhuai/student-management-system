@@ -10,10 +10,7 @@ state.push(action.payload);
 },
 editUser: (state,action)=>{
   const {id, name, email } = action.payload;
-  
-  const updatedUser = state.find(user => user.id == id);
-  console.log(id)
-  console.log({updatedUser})
+  const updatedUser = state.find(user => user.id ==id);
   if(updatedUser){
 updatedUser.name = name;
 updatedUser.email = email;
@@ -21,7 +18,7 @@ updatedUser.email = email;
 },
 deleteUser: (state, action)=>{
   const {id} = action.payload;
-  const updatedUser = state.find(user => user.id === id);
+  const updatedUser = state.find(user => user.id == id);
   if(updatedUser){
     return state.filter(user => user.id !==id);
   }
